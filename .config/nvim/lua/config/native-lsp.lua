@@ -10,7 +10,7 @@ vim.lsp.enable("asm-lsp")
 vim.lsp.enable("autotools_ls")
 
 -- bash, sh
-vim.lsp.enable("bashls")
+vim.lsp.enable("bash_ls")
 
 -- C, C++
 vim.lsp.enable("clangd")
