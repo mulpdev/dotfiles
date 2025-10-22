@@ -22,6 +22,6 @@ return {
 	filetypes = { "config", "automake", "make" },
 	root_dir = function(bufnr, on_dir)
 		local fname = vim.api.nvim_buf_get_name(bufnr)
-		on_dir(util.root_pattern(unpack(root_files))(fname))
+		on_dir(util.root_pattern(unpack(root_files))(fname)) -- util is from plugin https://github.com/neovim/nvim-lspconfig
 	end,
 }
