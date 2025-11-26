@@ -1,4 +1,4 @@
--- Source: Chris Arderne https://rdrn.me/neovim-2025/
+-- Base source: Chris Arderne https://rdrn.me/neovim-2025/
 
 -- # <leader> prefix keys
 --vim.g.mapleader = "," -- maps that apply to all filetypes
@@ -34,10 +34,30 @@ vim.opt.shiftwidth = 2
 -- vim.opt.smartindent = true --  reacts to C style code syntax, autoindent should also be on if this is on
 
 -- # Code folding :help folding
--- vim.opt.foldenable = true -- toggle to show all folds open (false) or show folds (true)
--- vim.opt.foldmethod = 'manual' -- :help foldmethod
--- vim.opt.diffopt:remove("context:foldcolumn") -- from JG, :help fold-diff
--- vim.opt.diffopt:append("context:9999") -- from JG, :help fold-diff
+vim.opt.foldenable = false -- toggle to show all folds open (false) or show folds (true)
+vim.opt.diffopt:remove("context:foldcolumn") -- from JG, :help fold-diff
+vim.opt.diffopt:append("context:9999") -- from JG, :help fold-diff
+
+	-- treesitter
+	--vim.opt.foldmethod = 'expr' -- treesitter
+	--vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- treesitter
+	--vim.opt.foldexpr = "nvim_treesitter#foldexpr()" - treesitter
+
+	-- indent based folding # https://www.reddit.com/r/neovim/comments/10q2mjq/comment/j6nmuw8/
+	vim.opt.fillchars = { fold = " " }
+	vim.opt.foldmethod = "indent"
+	vim.opt.foldenable = false -- set above
+	vim.opt.foldlevel = 99
+	vim.g.markdown_folding = 1 -- enable markdown folding
+	
+	-- lsp https://www.reddit.com/r/neovim/comments/1h34lr4/comment/lzpqkao/
+	--vim.o.foldmethod = "expr"
+	--vim.o.foldexpr = "v:lua.vim.lsp.foldexpr()"
+	--vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
+	--vim.o.foldcolumn = '1'
+	--vim.o.foldenable = true -- set above
+	--vim.o.foldlevel = 99
+	--vim.o.foldlevelstart = 99
 
 --  # display and behavior
 vim.opt.number = true   -- absolute line numbers

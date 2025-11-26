@@ -4,7 +4,7 @@
 -- argument 1 to vim.lsp.enable is filename w/o .lua from ../../lsp/
 
 -- gas, nasm, vmsm
-vim.lsp.enable("asm-lsp")
+--vim.lsp.enable("asm-lsp")
 
 -- GNU autoconf, autotools, make
 vim.lsp.enable("autotools_ls")
