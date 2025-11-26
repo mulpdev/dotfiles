@@ -1,6 +1,8 @@
 require("config.options")
+require("config.keymaps")
 require("config.native-lsp")
 require("config.nvim-cmp-all")
-require("config.keymaps")
+require("config.netrw")
+
 require("plugins.nvim-treesitter")
 require("plugins.vim-tmux-navigator")
